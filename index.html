@@ -1,32 +1,144 @@
-  <!-- TO RUN IN BROWSER:
-    1. Install vscode extension Name: open in `browser open-in-browser` by TechER
-    2. Right click html file and either run in default browser or another browser
-  -->
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML/CSS Studio</title>
-    <!-- import CSS styles -->
-    <link rel="stylesheet" href="styles.css" /> 
-  </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Austin Williams Portfolio</title>
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<header class="header">
+			<div class="container">
+				<h1 class="name">Austin Williams</h1>
+				<nav class="nav">
+					<a href="#work">Work</a>
+					<a href="#about">About</a>
+				</nav>
+			</div>
+		</header>
 
-  <!-- page content goes into <body> -->
-  <body>
-    <div id="logoBar">
-      <h1>Welcome to 100 Acre Wood!</h1>
-      <img id="siteLogo" alt="Pooh-bear site logo" src="./assets/Header.png"/>
-      <h3>We're glad you're here :D</h3>
-    </div>
-    <hr/>
-    <div id="staffGallery">
-      <img class="galleryImage" src="./assets/Eeyore-Eh.png"/>
-      <img class="galleryImage" src="./assets/Eeyore-Zz.png"/>
-      <img class="galleryImage" src="./assets/Kanga-Roo.png"/>
-      <img class="galleryImage" src="./assets/Owl-Phone.png"/>
-    </div>
-  </body>
+		<section class="hero">
+			<div class="container">
+				<p class="tagline">
+					I'm Austin Williams, a CS student at Brown University passionate about building thoughtful, user-centered
+					digital experiences.
+				</p>
+				<div class="social-icons">
+					<a href="https://github.com/avstinwilliams" target="_blank" aria-label="GitHub">
+						<img src="assets/github.png" alt="GitHub icon" />
+					</a>
+					<a href="https://www.linkedin.com/in/b-austin-williams/" target="_blank" aria-label="LinkedIn">
+						<img src="assets/linkedin.png" alt="LinkedIn icon" />
+					</a>
+					<a href="assets/B_Austin_Williams_Resume.pdf" target="_blank" aria-label="Resume">
+						<img src="assets/resume.png" alt="Resume icon" />
+					</a>
+				</div>
+			</div>
+		</section>
 
+		<div class="page-content">
+			<main>
+				<section id="work" class="work">
+					<div class="container">
+						<h2>Here's what I've done...</h2>
+						<div class="project-grid">
+							<a href="https://avstinwilliams.github.io/iterative-design/" target="_blank" class="project-card">
+								<img src="assets/retrofit.png" alt="Retrofit thumbnail" />
+								<h3>Retrofit</h3>
+								<p>
+									An AI-powered vintage shopping experience that curates trending, in-demand pieces based on social data
+									and user style. I designed a clean, scrollable mobile interface and iteratively tested layout and
+									tagging systems to reduce overwhelm and increase joy in secondhand discovery.
+								</p>
+							</a>
+							<a href="https://avstinwilliams.github.io/responsive-redesign/" target="_blank" class="project-card">
+								<img src="assets/dpl.png" alt="Responsive Redesign thumbnail" />
+								<h3>Responsive Redesign</h3>
+								<p>
+									I redesigned the Dallas Public Library website to address major usability and accessibility issues. By
+									simplifying navigation, modernizing the visual design, and making the layout fully responsive, I
+									transformed a cluttered interface into a clean and intuitive user experience.
+								</p>
+							</a>
+							<a href="https://avstinwilliams.github.io/personas-storyboarding/" target="_blank" class="project-card">
+								<img src="assets/cvs.png" alt="Personas and Storyboarding thumbnail" />
+								<h3>Personas and Storyboarding</h3>
+								<p>
+									Conducted field research on CVS self-checkout kiosks to identify real user pain points. Synthesized
+									insights into empathy-based personas and storyboards to visualize common frustrations. Highlighted how
+									small UI choices can slow down or empower everyday users.
+								</p>
+							</a>
+							<a href="https://avstinwilliams.github.io/accessible-components/" target="_blank" class="project-card">
+								<img src="assets/radio-buttons.jpeg" alt="Accessible Components thumbnail" />
+								<h3>Accessible Components</h3>
+								<p>
+									A comparative analysis of radio button accessibility across Google Forms, macOS System Preferences,
+									and Amazon Checkout. I proposed redesigned state models and a System Preferences mockup to better
+									support mouse, keyboard, and screen reader users through more flexible interaction and feedback.
+								</p>
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section id="about" class="about">
+					<div class="container about-flex">
+						<div class="about-img">
+							<img src="assets/headshot.png" alt="Photo of Austin Williams" />
+						</div>
+						<div class="about-text">
+							<h2>About Me</h2>
+							<h3>Frontend Developer & UX-Focused Engineer</h3>
+							<p>
+								I'm a Computer Science student at Brown University with a passion for clean, intuitive design and the
+								technical craft behind it. Whether I'm building accessible web components or designing AI-curated
+								interfaces, I care about aligning user needs with thoughtful, scalable solutions. I bring both
+								creativity and precision to every project, blending design thinking with engineering execution.
+							</p>
+							<p>
+								Outside of work, I'm a film enthusiast, vintage fashion fan, and always curious about the next big
+								interface idea.
+							</p>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<p>&copy; 2025 Austin Williams</p>
+			</div>
+		</footer>
+		<script>
+			const hero = document.querySelector(".hero");
+			const tagline = hero.querySelector(".tagline");
+			const sections = document.querySelectorAll("main section");
+
+			window.addEventListener("scroll", () => {
+				const scrollY = window.scrollY;
+				const ratio = Math.min(scrollY / 100, 1);
+				const topPadding = 20 - ratio * 14;
+				hero.style.padding = `${topPadding}vh 1rem`;
+				const fontSize = 2 - ratio * 0.8;
+				tagline.style.fontSize = `${fontSize}rem`;
+
+				let current = "";
+				sections.forEach((section) => {
+					const sectionTop = section.offsetTop - 80;
+					if (pageYOffset >= sectionTop) {
+						current = section.getAttribute("id");
+					}
+				});
+			});
+		</script>
+	</body>
 </html>
